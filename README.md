@@ -1,2 +1,2 @@
 # todo_list
-an small todo app with javascripts.
+an simple todo app with javascripts.
