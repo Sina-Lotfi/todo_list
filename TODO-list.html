@@ -1,0 +1,45 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sopping List</title>
+    <form action="">
+      <input id="voroodi" type="text" />
+      <button onclick="addTodo(); return false;">Add</button>
+    </form>
+  </head>
+
+  <body>
+    <h1>Shoping List</h1>
+    <ul id="todo-list"></ul>
+    <script>
+      var listkharid = ["Milk", "Bnanan", "Apple", "Chocolate"];
+      var todolist = document.getElementById("todo-list");
+
+      function renderTodo() {
+        todolist.innerHTML = "";
+        for (var i = 0; i < listkharid.length; i++) {
+          todolist.innerHTML +=
+            "<li>" +
+            listkharid[i] +
+            '<a href="#" onclick = "deleteTodo(' +
+            i +
+            ')"> X </a>' +
+            "</li>";
+        }
+      }
+      function addTodo() {
+        var voroodi = document.getElementById("voroodi");
+        listkharid.push(voroodi.value);
+        voroodi.value = " ";
+        renderTodo();
+      }
+      function deleteTodo(index) {
+        listkharid.splice(index, 1);
+        renderTodo();
+      }
+      renderTodo();
+    </script>
+  </body>
+</html>
